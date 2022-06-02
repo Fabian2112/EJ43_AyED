@@ -5,34 +5,13 @@
 #include<iostream>
 using namespace std;
 
-//soy Gabriel, revise el codigo pero no encontre nada raro, corre bastante bien. Hay algunas cosas que se podrian optimizar no mas que el codigo, pero no se si hace falta.
-
 // Declaraciones adelantadas de las funciones
-bool entre25y40mil(float sueldo);
+bool entre25y40mil(double sueldo);
 
 int main() {
 	string bs;
-	int cempleados;
-	int csue25y40;
-	int csue30;
-	int dni;
-	int dnimaxsue;
-	int maxcempleados;
-	int maxcsue30;
-	float maxsue;
-	int n;
-	int sede;
-	int sedemaxcempleados;
-	int sedemaxcsue30;
-	float sue;
-	float suesede;
-	float suetot;
-	int tt;
-	n = 3;
-	maxcsue30 = 0;
-	suetot = 0;
-	maxsue = 0;
-	maxcempleados = 0;
+	int cempleados, csue25y40, csue30, dni, dnimaxsue, maxcempleados = 0, maxcsue30 = 0, n = 3, sede, sedemaxcempleados, sedemaxcsue30;
+	double maxsue = 0, sue, suesede, suetot, tt;
 	for (sede=1;sede<=n;sede++) {
 		int ns;
 		suesede = 0;
@@ -40,16 +19,17 @@ int main() {
 		cempleados = 0;
 		cout << "Ingrese el Numero de la sede" << endl;
 		cin >> ns;
-		//hasta ahora lo unico que encontre mal es esta parte, la corregi. No salia el numero de la sucursar porque se reiniciaba la variable cada vez que se ingresaba una sede. -Gabriel
-		cout << "Ingrese el barrio de la sede numero "<< ns <<", por favor. "<< endl;
+		cout << "Ingrese el barrio de la sede nro"<< ns <<". "<< endl;
 		cin >> bs;
 		cout << "Ingrese el DNI del empleado" << endl;
 		cin >> dni;
-		while (dni!=0) {
+		while (dni!=0){
 			cout << "Ingrese Sueldo" << endl;
 			cin >> sue;
-			cout << "Ingrese tipo de tarea (1-10)" << endl;
-			cin >> tt;
+			while (tt<1 || tt>10){
+				cout << "Ingrese tipo de tarea (1-10)" << endl;
+				cin >> tt;
+			}
 			if (entre25y40mil(sue)) {
 				csue25y40 = csue25y40+1;
 			}
@@ -78,7 +58,7 @@ int main() {
 	return 0;
 }
 
-bool entre25y40mil(float sueldo) {
+bool entre25y40mil(double sueldo) {
 	bool e20y40mil;
 	if (sueldo>=25000 && sueldo<=40000) {
 		e20y40mil = true;
