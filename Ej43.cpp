@@ -5,11 +5,7 @@
 #include<iostream>
 using namespace std;
 
-// Para leer variables de texto se utiliza el operador << del objeto cin, que
-// lee solo una palabra. Para leer una linea completa (es decir, incluyendo los
-// espacios en blanco) se debe utilzar getline (ej, reemplazar cin>>x por
-// getline(cin,x)), pero obliga a agregar un cin.ignore() si antes del getline
-// se leyó otra variable con >>.
+//soy Gabriel, revise el codigo pero no encontre nada raro, corre bastante bien. Hay algunas cosas que se podrian optimizar no mas que el codigo, pero no se si hace falta.
 
 // Declaraciones adelantadas de las funciones
 bool entre25y40mil(float sueldo);
@@ -25,7 +21,6 @@ int main() {
 	int maxcsue30;
 	float maxsue;
 	int n;
-	int ns;
 	int sede;
 	int sedemaxcempleados;
 	int sedemaxcsue30;
@@ -39,12 +34,14 @@ int main() {
 	maxsue = 0;
 	maxcempleados = 0;
 	for (sede=1;sede<=n;sede++) {
+		int ns;
 		suesede = 0;
 		csue25y40 = 0;
 		cempleados = 0;
 		cout << "Ingrese el Numero de la sede" << endl;
 		cin >> ns;
-		cout << "Ingrese el barrio de la sede Nro " << ns << endl;
+		//hasta ahora lo unico que encontre mal es esta parte, la corregi. No salia el numero de la sucursar porque se reiniciaba la variable cada vez que se ingresaba una sede. -Gabriel
+		cout << "Ingrese el barrio de la sede numero "<< ns <<", por favor. "<< endl;
 		cin >> bs;
 		cout << "Ingrese el DNI del empleado" << endl;
 		cin >> dni;
