@@ -5,11 +5,6 @@
 #include<iostream>
 using namespace std;
 
-// Para las variables que no se pudo determinar el tipo se utiliza la constante
-// SIN_TIPO. El usuario debe reemplazar sus ocurrencias por el tipo adecuado
-// (usualmente int,float,string o bool).
-#define SIN_TIPO string
-
 // Para leer variables de texto se utiliza el operador << del objeto cin, que
 // lee solo una palabra. Para leer una linea completa (es decir, incluyendo los
 // espacios en blanco) se debe utilzar getline (ej, reemplazar cin>>x por
@@ -21,13 +16,12 @@ bool entre25y40mil(float sueldo);
 
 int main() {
 	string bs;
-	float cempleados;
+	int cempleados;
 	int csue25y40;
 	int csue30;
 	int dni;
 	int dnimaxsue;
-	float maxcempleados;
-	float maxcemppleados;
+	int maxcempleados;
 	int maxcsue30;
 	float maxsue;
 	int n;
@@ -36,7 +30,6 @@ int main() {
 	int sedemaxcempleados;
 	int sedemaxcsue30;
 	float sue;
-	SIN_TIPO suesde;
 	float suesede;
 	float suetot;
 	int tt;
@@ -44,7 +37,7 @@ int main() {
 	maxcsue30 = 0;
 	suetot = 0;
 	maxsue = 0;
-	maxcemppleados = 0;
+	maxcempleados = 0;
 	for (sede=1;sede<=n;sede++) {
 		suesede = 0;
 		csue25y40 = 0;
@@ -79,12 +72,12 @@ int main() {
 			sedemaxcempleados = ns;
 		}
 		cout << "En sede " << bs << " hay " << csue25y40 << " empleados con sueldos entre $25000 y $40000" << endl;
-		cout << "En Sede " << bs << " hay que abonar $" << suesde << " de sueldos" << endl;
+		cout << "En Sede " << bs << " hay que abonar $" << suesede << " de sueldos" << endl;
 		suetot = suetot+suesede;
 	}
-	cout << "Sede con > cant de empleados es " << sedemaxcempleados << " con " << cempleados << " empleados" << endl;
-	cout << "El empleados con mayor sueldo es DNI " << dnimaxsue << endl;
-	cout << "Entre todas las sedes hay que abonar $" << suetot << " de sueldos" << sue << endl;
+	cout << "Sede con mayor cant de empleados es " << sedemaxcempleados << " con " << cempleados << " empleados" << endl;
+	cout << "El empleado con mayor sueldo de TT=1 es DNI " << dnimaxsue << endl;
+	cout << "Entre todas las sedes hay que abonar $" << suetot << " en sueldos" << endl;
 	return 0;
 }
 

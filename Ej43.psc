@@ -1,12 +1,12 @@
-Algoritmo Ej43 
-	Definir sede,N,NS,DNI,TT,CSue25y40,DNIMaxSue,CSue30,MaxCSue30,SedeMaxCSue30 como entero
-	Definir Sue,MaxSue,SueSede,SueTot como real
-	Definir BS como caracter
+Algoritmo Ej43
+	Definir sede,N,NS,DNI,TT,CSue25y40,DNIMaxSue,CSue30,MaxCSue30,SedeMaxCSue30,Cempleados,MaxCempleados,SedeMaxCempleados Como Entero
+	Definir Sue,MaxSue,SueSede,SueTot Como Real
+	Definir BS Como Caracter
 	N <- 3
 	MaxCSue30 <- 0
 	SueTot <- 0
 	MaxSue <- 0
-	MaxCemppleados <- 0
+	MaxCempleados <- 0
 	Para sede<-1 Hasta N Hacer
 		SueSede <- 0
 		CSue25y40 <- 0
@@ -41,13 +41,12 @@ Algoritmo Ej43
 			SedeMaxCempleados <- NS
 		FinSi
 		Escribir 'En sede ',BS,' hay ',CSue25y40,' empleados con sueldos entre $25000 y $40000'
-		Escribir 'En Sede ',BS,' hay que abonar $',SueSde,' de sueldos'
+		Escribir 'En Sede ',BS,' hay que abonar $',SueSede,' de sueldos'
 		SueTot <- SueTot+SueSede
 	FinPara
-	Escribir "Sede con > cant de empleados es ",SedeMaxCempleados," con ",Cempleados," empleados"
-	Escribir "El empleados con mayor sueldo es DNI ",DNIMaxSue
-	Escribir "Entre todas las sedes hay que abonar $",SueTot," de sueldos", Sue
-
+	Escribir 'Sede con mayor cant de empleados es ',SedeMaxCempleados,' con ',Cempleados,' empleados'
+	Escribir 'El empleado con mayor sueldo de TT=1 es DNI ',DNIMaxSue
+	Escribir 'Entre todas las sedes hay que abonar $',SueTot,' en sueldos'
 FinAlgoritmo
 
 Funcion e20y40mil <- Entre25y40mil(sueldo)
@@ -58,5 +57,3 @@ Funcion e20y40mil <- Entre25y40mil(sueldo)
 		e20y40mil <- falso
 	FinSi
 FinFuncion
-
-
